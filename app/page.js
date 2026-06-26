@@ -113,6 +113,198 @@ const STATS = [
   { value: 9, suffix: '', label: 'Major awards' },
 ];
 
+/* ---------- Intro / Splash ---------- */
+const INTRO_LINES = [
+  { kicker: 'A story', main: 'begins with', accent: 'a question.' },
+  { kicker: 'Communication', main: 'is the bridge between', accent: 'truth & the world.' },
+  { kicker: 'In journalism,', main: 'listening is louder than', accent: 'speaking.' },
+  { kicker: 'Words travel', main: 'further than', accent: 'facts.' },
+  { kicker: 'The first', main: 'draft of', accent: 'history.' },
+];
+
+function Intro({ onEnter }) {
+  const [idx, setIdx] = useState(0);
+  const [time, setTime] = useState('');
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const sx = useSpring(x, { stiffness: 80, damping: 20 });
+  const sy = useSpring(y, { stiffness: 80, damping: 20 });
+
+  useEffect(() => {
+    const id = setInterval(() => setIdx((i) => (i + 1) % INTRO_LINES.length), 3200);
+    return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    const fmt = () => {
+      const d = new Date();
+      const t = d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false });
+      setTime(t);
+    };
+    fmt();
+    const id = setInterval(fmt, 1000 * 30);
+    return () => clearInterval(id);
+  }, []);
+
+  const onMove = (e) => {
+    const cx = window.innerWidth / 2;
+    const cy = window.innerHeight / 2;
+    x.set((e.clientX - cx) * 0.02);
+    y.set((e.clientY - cy) * 0.02);
+  };
+
+  const line = INTRO_LINES[idx];
+
+  return (
+    <motion.div
+      key="intro"
+      onMouseMove={onMove}
+      initial={{ opacity: 1 }}
+      exit={{
+        clipPath: 'inset(50% 0% 50% 0%)',
+        transition: { duration: 1.1, ease: [0.76, 0, 0.24, 1] },
+      }}
+      className="fixed inset-0 z-[120] bg-[#0B0B0B] text-[#FAF8F3] grain overflow-hidden flex flex-col"
+      style={{ clipPath: 'inset(0% 0% 0% 0%)' }}
+    >
+      {/* Top bar */}
+      <motion.div
+        initial={{ y: -30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+        className="flex items-center justify-between px-6 md:px-10 py-6 border-b border-[#FAF8F3]/15 font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] text-[#FAF8F3]/60"
+      >
+        <span className="flex items-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#8B1A1A] animate-pulse-dot" />
+          On the record
+        </span>
+        <span className="hidden sm:inline font-serif italic text-base normal-case tracking-normal text-[#FAF8F3]/80">
+          Aarav Sharma &mdash; Journalist
+        </span>
+        <span className="tabular-nums">{time || '--:--'} IST</span>
+      </motion.div>
+
+      {/* Center stage */}
+      <button
+        type="button"
+        onClick={onEnter}
+        data-cursor="cta"
+        data-cursor-label="Enter"
+        className="flex-1 w-full text-left relative outline-none focus:outline-none cursor-pointer"
+      >
+        <motion.div
+          style={{ x: sx, y: sy }}
+          className="absolute inset-0 flex items-center justify-center px-6 md:px-16"
+        >
+          <div className="max-w-6xl w-full">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <motion.p
+                  initial={{ y: 30, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -30, opacity: 0 }}
+                  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                  className="font-mono text-xs md:text-sm uppercase tracking-[0.3em] text-[#8B1A1A] mb-6 md:mb-10 flex items-center gap-4"
+                >
+                  <span className="w-10 h-px bg-[#8B1A1A]" />
+                  {String(idx + 1).padStart(2, '0')} / {String(INTRO_LINES.length).padStart(2, '0')}
+                </motion.p>
+
+                <h1 className="font-serif leading-[0.95] tracking-[-0.02em] text-[clamp(2.5rem,8.5vw,9rem)] text-balance">
+                  <motion.span
+                    initial={{ y: 80, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -40, opacity: 0 }}
+                    transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
+                    className="block italic font-normal text-[#FAF8F3]/60"
+                  >
+                    {line.kicker}
+                  </motion.span>
+                  <motion.span
+                    initial={{ y: 80, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -40, opacity: 0 }}
+                    transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+                    className="block"
+                  >
+                    {line.main}
+                  </motion.span>
+                  <motion.span
+                    initial={{ y: 80, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -40, opacity: 0 }}
+                    transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.25 }}
+                    className="block text-[#8B1A1A] italic"
+                  >
+                    {line.accent}
+                  </motion.span>
+                </h1>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </motion.div>
+
+        {/* Decorative big quote mark */}
+        <Quote className="absolute top-1/4 right-6 md:right-16 w-24 h-24 md:w-40 md:h-40 text-[#FAF8F3]/5" />
+      </button>
+
+      {/* Bottom bar */}
+      <motion.div
+        initial={{ y: 30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+        className="px-6 md:px-10 py-8 border-t border-[#FAF8F3]/15 flex items-center justify-between gap-6"
+      >
+        <div className="hidden md:flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-[#FAF8F3]/50">
+          <span>Tap anywhere</span>
+          <span className="text-[#8B1A1A]">/</span>
+          <span>or press the button</span>
+        </div>
+
+        <MagneticButton
+          onClick={onEnter}
+          data-cursor="cta"
+          data-cursor-label="Enter"
+          className="group mx-auto md:mx-0 inline-flex items-center gap-4 bg-[#FAF8F3] text-[#0B0B0B] pl-7 pr-2 py-2 rounded-full text-sm font-mono uppercase tracking-[0.2em] hover:bg-[#8B1A1A] hover:text-[#FAF8F3] transition-colors"
+        >
+          Enter the portfolio
+          <span className="w-12 h-12 grid place-items-center rounded-full bg-[#0B0B0B] text-[#FAF8F3] group-hover:bg-[#FAF8F3] group-hover:text-[#8B1A1A] group-hover:rotate-45 transition-all">
+            <ArrowRight className="w-5 h-5" />
+          </span>
+        </MagneticButton>
+
+        <div className="hidden md:flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.3em] text-[#FAF8F3]/50">
+          <motion.span
+            animate={{ y: [0, -3, 0] }}
+            transition={{ repeat: Infinity, duration: 1.8 }}
+          >
+            <ChevronDown className="w-4 h-4 rotate-[-90deg]" />
+          </motion.span>
+          <span>Scroll inside</span>
+        </div>
+      </motion.div>
+
+      {/* Pagination dots */}
+      <div className="absolute left-6 md:left-10 top-1/2 -translate-y-1/2 hidden md:flex flex-col gap-3">
+        {INTRO_LINES.map((_, i) => (
+          <span
+            key={i}
+            className={`w-px transition-all duration-500 ${
+              i === idx ? 'h-10 bg-[#8B1A1A]' : 'h-4 bg-[#FAF8F3]/30'
+            }`}
+          />
+        ))}
+      </div>
+    </motion.div>
+  );
+}
+
 /* ---------- Custom Cursor ---------- */
 function CustomCursor() {
   const x = useMotionValue(-100);
@@ -923,9 +1115,23 @@ function Footer() {
 
 /* ---------- App ---------- */
 function App() {
+  const [entered, setEntered] = useState(false);
+
+  useEffect(() => {
+    if (entered) {
+      document.body.style.overflow = '';
+    } else {
+      document.body.style.overflow = 'hidden';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [entered]);
+
   return (
     <main className="relative grain cursor-none-all">
       <CustomCursor />
+      <AnimatePresence mode="wait">
+        {!entered && <Intro key="intro" onEnter={() => setEntered(true)} />}
+      </AnimatePresence>
       <ProgressBar />
       <Nav />
       <Hero />
