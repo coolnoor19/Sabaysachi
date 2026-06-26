@@ -965,7 +965,7 @@ function PullQuote() {
       <div className="max-w-5xl mx-auto px-6 md:px-10 text-center">
         <Quote className="w-10 h-10 mx-auto text-[#8B1A1A] mb-8" />
         <RevealHeadline
-          text="Aarav writes the kind of reportage that ages slowly and reads forever."
+          text="Sabaysachi writes the kind of reportage that ages slowly and reads forever."
           className="font-serif italic text-3xl md:text-5xl leading-[1.15] text-balance"
         />
         <p className="mt-8 font-mono text-xs uppercase tracking-[0.3em] text-[#FAF8F3]/60">
@@ -1066,13 +1066,13 @@ function Contact() {
               <Mail className="w-4 h-4 text-[#8B1A1A]" /> hello@example.com
             </a>
             <a href="#" data-cursor="link" className="flex items-center gap-3 link-underline">
-              <Twitter className="w-4 h-4 text-[#8B1A1A]" /> @aaravsharma
+              <Twitter className="w-4 h-4 text-[#8B1A1A]" /> @Sabaysachisharma
             </a>
             <a href="#" data-cursor="link" className="flex items-center gap-3 link-underline">
-              <Linkedin className="w-4 h-4 text-[#8B1A1A]" /> /in/aaravsharma
+              <Linkedin className="w-4 h-4 text-[#8B1A1A]" /> /in/Sabaysachisharma
             </a>
             <a href="#" data-cursor="link" className="flex items-center gap-3 link-underline">
-              <Instagram className="w-4 h-4 text-[#8B1A1A]" /> @aarav.field.notes
+              <Instagram className="w-4 h-4 text-[#8B1A1A]" /> @Sabaysachi.field.notes
             </a>
           </div>
         </div>
