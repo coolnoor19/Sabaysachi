@@ -203,7 +203,7 @@ function Intro({ onEnter }) {
           On the record
         </span>
         <span className="hidden sm:inline font-serif italic text-base normal-case tracking-normal text-[#FAF8F3]/80">
-          Aarav Sharma &mdash; Journalist
+          Sabhyasachi  &mdash; Journalist
         </span>
         <span className="tabular-nums">{time || '--:--'} IST</span>
       </motion.div>
@@ -539,8 +539,8 @@ function Nav() {
           className="font-serif text-xl md:text-2xl tracking-tight flex items-center gap-2"
         >
           <span className="inline-block w-2 h-2 rounded-full bg-[#8B1A1A] animate-pulse-dot" />
-          <span className="italic">Aarav</span>
-          <span className="font-bold">Sharma</span>
+          <span className="italic">Sabaysachi</span>
+          <span className="font-bold"></span>
         </a>
         <ul className="hidden md:flex items-center gap-9">
           {links.map((l) => (
@@ -652,7 +652,7 @@ function Hero() {
               className="mt-10 max-w-xl text-[#0B0B0B]/75 text-lg leading-relaxed text-pretty"
             >
               I&apos;m{' '}
-              <span className="font-serif italic text-[#0B0B0B]">Aarav Sharma</span>{' '}
+              <span className="font-serif italic text-[#0B0B0B]">Sabaysachi</span>{' '}
               — a journalist reporting on{' '}
               <span className="relative inline-block min-w-[10.5rem] text-left">
                 <AnimatePresence mode="wait">
@@ -713,7 +713,7 @@ function Hero() {
             >
               <img
                 src="https://images.unsplash.com/photo-1528190240347-03ccaffd0674?w=900&q=85"
-                alt="Aarav Sharma"
+                alt="Sabaysachi"
                 className="w-full h-full object-cover img-editorial"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
@@ -1137,7 +1137,7 @@ function Footer() {
     <footer className="bg-[#0B0B0B] text-[#FAF8F3]/70 border-t border-[#FAF8F3]/10">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
         <p className="font-serif italic text-lg">
-          Aarav Sharma <span className="not-italic font-mono text-xs uppercase tracking-[0.25em] ml-3">Est. 2014</span>
+          Sabaysachi <span className="not-italic font-mono text-xs uppercase tracking-[0.25em] ml-3">Est. 2014</span>
         </p>
         <p className="font-mono text-[11px] uppercase tracking-[0.25em]">
           © {new Date().getFullYear()} — All bylines reserved.
