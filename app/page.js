@@ -167,6 +167,30 @@ function Intro({ onEnter }) {
       className="fixed inset-0 z-[120] bg-[#0B0B0B] text-[#FAF8F3] grain overflow-hidden flex flex-col"
       style={{ clipPath: 'inset(0% 0% 0% 0%)' }}
     >
+      {/* Ambient background marquees */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[18%] left-0 right-0 flex whitespace-nowrap animate-marquee opacity-[0.06]">
+          {[...Array(2)].map((_, k) => (
+            <div key={k} className="flex items-center gap-16 px-8 font-serif text-[10vw] leading-none italic text-[#FAF8F3]">
+              {['Newsroom', 'Long-form', 'On the record', 'Dispatch', 'Byline', 'Investigation'].map((w, i) => (
+                <span key={i}>{w}<span className="text-[#8B1A1A] mx-6">•</span></span>
+              ))}
+            </div>
+          ))}
+        </div>
+        <div
+          className="absolute bottom-[18%] left-0 right-0 flex whitespace-nowrap animate-marquee opacity-[0.05]"
+          style={{ animationDirection: 'reverse', animationDuration: '55s' }}
+        >
+          {[...Array(2)].map((_, k) => (
+            <div key={k} className="flex items-center gap-16 px-8 font-serif text-[8vw] leading-none text-[#FAF8F3]">
+              {['Politics', 'Sports', 'Culture', 'Investigative', 'Field notes', 'Source'].map((w, i) => (
+                <span key={i}>{w}<span className="text-[#8B1A1A] mx-6">/</span></span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
       {/* Top bar */}
       <motion.div
         initial={{ y: -30, opacity: 0 }}
@@ -183,6 +207,19 @@ function Intro({ onEnter }) {
         </span>
         <span className="tabular-nums">{time || '--:--'} IST</span>
       </motion.div>
+
+      {/* Skip intro */}
+      <motion.button
+        type="button"
+        onClick={(e) => { e.stopPropagation(); onEnter(); }}
+        data-cursor="link"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6, duration: 0.6 }}
+        className="absolute top-20 right-6 md:right-10 z-10 font-mono text-[10px] uppercase tracking-[0.3em] text-[#FAF8F3]/60 hover:text-[#8B1A1A] transition-colors flex items-center gap-2"
+      >
+        Skip intro <ArrowUpRight className="w-3 h-3" />
+      </motion.button>
 
       {/* Center stage */}
       <button
@@ -1115,22 +1152,31 @@ function Footer() {
 
 /* ---------- App ---------- */
 function App() {
-  const [entered, setEntered] = useState(false);
+  const [entered, setEntered] = useState(true); // start true to avoid SSR flash; corrected on mount
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    if (entered) {
-      document.body.style.overflow = '';
-    } else {
-      document.body.style.overflow = 'hidden';
-    }
+    const seen = typeof window !== 'undefined' && sessionStorage.getItem('intro_seen') === '1';
+    setEntered(seen);
+    setReady(true);
+  }, []);
+
+  const handleEnter = () => {
+    try { sessionStorage.setItem('intro_seen', '1'); } catch (e) {}
+    setEntered(true);
+  };
+
+  useEffect(() => {
+    if (!ready) return;
+    document.body.style.overflow = entered ? '' : 'hidden';
     return () => { document.body.style.overflow = ''; };
-  }, [entered]);
+  }, [entered, ready]);
 
   return (
     <main className="relative grain cursor-none-all">
       <CustomCursor />
       <AnimatePresence mode="wait">
-        {!entered && <Intro key="intro" onEnter={() => setEntered(true)} />}
+        {ready && !entered && <Intro key="intro" onEnter={handleEnter} />}
       </AnimatePresence>
       <ProgressBar />
       <Nav />
