@@ -22,7 +22,7 @@ export default function Video() {
             </h2>
           </FadeUp>
           <FadeUp delay={0.1} className="max-w-sm text-white/65 text-sm md:text-base">
-            <p>A long-form interview on the craft of communication, journalism and the stories behind the headlines.</p>
+            <p>A tribute to Silver City Kataka.</p>
           </FadeUp>
         </div>
 

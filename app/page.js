@@ -16,6 +16,7 @@ import Contact from '@/components/sections/Contact';
 import Footer from '@/components/sections/Footer';
 import NewAbout from '@/components/sections/NewAbout';
 import Video from '@/components/sections/Video';
+import VideoSection from '@/components/sections/VideosSection';
 
 function App() {
   const [entered, setEntered] = useState(true);
@@ -53,7 +54,8 @@ function App() {
       {/* <Articles /> */}
       <Awards />
       {/* <PullQuote /> */}
-      <Press />
+      {/* <Press /> */}
+      <VideoSection/>
       <Contact />
       <Footer />
     </main>
