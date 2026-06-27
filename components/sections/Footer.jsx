@@ -13,7 +13,7 @@ export default function Footer() {
               <span className="w-1.5 h-1.5 bg-lime rounded-full" /> sabayasachi.work
             </p>
             <p className="font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] tracking-[-0.02em] text-balance">
-              I moonlight across multiple projects—mostly to feed my ego  <span className="text-lime italic font-light">moonlight</span> 
+              I <span className="text-lime italic font-light">moonlight</span>  across multiple projects—mostly to feed my ego  
             </p>
             <a href={`mailto:${PROFILE.email}`}
               className="mt-6 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] link-fx hover:text-lime">

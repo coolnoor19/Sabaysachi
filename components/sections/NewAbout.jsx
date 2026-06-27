@@ -1,14 +1,28 @@
 'use client';
 import { motion } from 'framer-motion';
-import { PROFILE, STATS } from '@/lib/data';
+import { NEWPROFILE, PROFILE, STATS } from '@/lib/data';
 import FadeUp from '@/components/ui/FadeUp';
 import Counter from '@/components/ui/Counter';
 
-export default function About() {
+export default function NewAbout() {
   return (
     <section id="about" className="py-20 md:py-32">
       <div className="max-w-[1400px] mx-auto px-5 md:px-10 grid grid-cols-12 gap-8 md:gap-10">
-        
+        <FadeUp className="col-span-12 md:col-span-5 lg:col-span-4">
+          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lime mb-4">02 / About</p>
+          <motion.div
+            initial={{ opacity: 0, scale: 1.05 }} whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: '-100px' }} transition={{ duration: 1.2 }}
+            className="hover-img aspect-[4/5] overflow-hidden rounded-md relative" data-cursor="image"
+          >
+            <img
+              src="/profile-pic.jpeg"
+              alt={PROFILE.name}
+              className="w-full h-full object-cover"
+            />
+            
+          </motion.div>
+        </FadeUp>
 
         <div className="col-span-12 md:col-span-7 lg:col-span-8 md:pl-6">
           <FadeUp as="h2" className="font-display font-medium text-4xl sm:text-5xl md:text-6xl lg:text-4xl leading-[1.02] tracking-[-0.025em] text-balance">
@@ -16,7 +30,7 @@ export default function About() {
           </FadeUp>
 
           <div className="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 text-white/70 text-[15px] md:text-base leading-relaxed">
-            {PROFILE.about.map((p, i) => (
+            {NEWPROFILE.about.map((p, i) => (
               <FadeUp key={i} delay={0.1 + i * 0.1}><p>{p}</p></FadeUp>
             ))}
           </div>
@@ -33,21 +47,6 @@ export default function About() {
             ))}
           </div> */}
         </div>
-        <FadeUp className="col-span-12 md:col-span-5 lg:col-span-4">
-          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lime mb-4">02 / About</p>
-          <motion.div
-            initial={{ opacity: 0, scale: 1.05 }} whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: '-100px' }} transition={{ duration: 1.2 }}
-            className="hover-img aspect-[4/5] overflow-hidden rounded-md relative" data-cursor="image"
-          >
-            <img
-              src="/profile.jpeg"
-              alt={PROFILE.name}
-              className="w-full h-full object-cover"
-            />
-            
-          </motion.div>
-        </FadeUp>
       </div>
     </section>
   );

@@ -14,6 +14,7 @@ import PullQuote from '@/components/sections/PullQuote';
 import Press from '@/components/sections/Press';
 import Contact from '@/components/sections/Contact';
 import Footer from '@/components/sections/Footer';
+import NewAbout from '@/components/sections/NewAbout';
 
 function App() {
   const [entered, setEntered] = useState(true);
@@ -46,6 +47,7 @@ function App() {
       <Hero />
       <Marquee />
       <About />
+      <NewAbout/>
       {/* <Articles /> */}
       <Awards />
       {/* <PullQuote /> */}
