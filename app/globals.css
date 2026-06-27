@@ -4,57 +4,39 @@
 
 @layer base {
   :root {
-    --background: 42 33% 96%;
-    --foreground: 0 0% 4%;
-    --card: 42 33% 96%;
-    --card-foreground: 0 0% 4%;
-    --popover: 42 33% 96%;
-    --popover-foreground: 0 0% 4%;
-    --primary: 0 0% 4%;
-    --primary-foreground: 42 33% 96%;
-    --secondary: 42 20% 90%;
-    --secondary-foreground: 0 0% 4%;
-    --muted: 42 20% 90%;
-    --muted-foreground: 0 0% 35%;
-    --accent: 0 68% 32%;
-    --accent-foreground: 42 33% 96%;
+    --background: 240 4% 6%;
+    --foreground: 0 0% 98%;
+    --card: 240 4% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 4% 6%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 72 100% 62%;
+    --primary-foreground: 240 4% 6%;
+    --secondary: 240 4% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 4% 12%;
+    --muted-foreground: 0 0% 64%;
+    --accent: 72 100% 62%;
+    --accent-foreground: 240 4% 6%;
     --destructive: 0 84% 60%;
-    --destructive-foreground: 42 33% 96%;
-    --border: 0 0% 85%;
-    --input: 0 0% 85%;
-    --ring: 0 0% 4%;
-    --radius: 0.25rem;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 100% / 0.1;
+    --input: 0 0% 100% / 0.1;
+    --ring: 72 100% 62%;
+    --radius: 0.5rem;
   }
 }
 
 @layer base {
-  * { @apply border-border; }
-  body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "ss01", "cv11";
-  }
-  html { scroll-behavior: smooth; }
+  * { @apply border-white/10; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body { @apply bg-ink text-white; overflow-x: hidden; }
 }
 
 @layer utilities {
-  .font-serif { font-family: var(--font-playfair), Georgia, serif; }
-  .font-sans { font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif; }
-  .font-mono { font-family: var(--font-mono), "SF Mono", Menlo, monospace; }
-
-  .text-balance { text-wrap: balance; }
-  .text-pretty { text-wrap: pretty; }
-
-  /* Grain texture overlay for editorial feel */
-  .grain::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 100;
-    opacity: 0.06;
-    mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-  }
+  .font-display { font-family: var(--font-display), Georgia, serif; }
+  .font-sans { font-family: var(--font-sans), -apple-system, sans-serif; }
+  .font-mono { font-family: var(--font-mono), Menlo, monospace; }
 
   /* Marquee */
   @keyframes marquee {
@@ -62,40 +44,37 @@
     to { transform: translateX(-50%); }
   }
   .animate-marquee { animation: marquee 40s linear infinite; }
+  .animate-marquee-slow { animation: marquee 60s linear infinite; }
 
-  /* Custom cursor states - hide default on desktop */
-  @media (pointer: fine) {
-    .cursor-none-all, .cursor-none-all * { cursor: none !important; }
-  }
+  /* Image hover lift */
+  .hover-img img { transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
+  .hover-img:hover img { transform: scale(1.05); }
 
-  /* Underline draw on hover */
-  .link-underline {
+  /* Link underline draw */
+  .link-fx {
     background-image: linear-gradient(currentColor, currentColor);
     background-size: 0% 1px;
     background-repeat: no-repeat;
     background-position: 0 100%;
-    transition: background-size 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+    transition: background-size 0.45s cubic-bezier(0.65, 0.05, 0.36, 1), color 0.3s;
   }
-  .link-underline:hover { background-size: 100% 1px; }
-
-  /* Slide-up text reveal mask */
-  .reveal-mask { overflow: hidden; display: inline-block; }
-
-  /* Article image hover: grayscale to color */
-  .img-editorial { filter: grayscale(100%) contrast(1.05); transition: filter 0.7s ease, transform 0.9s ease; }
-  .img-editorial:hover { filter: grayscale(0%) contrast(1); transform: scale(1.03); }
-
-  /* Subtle floating */
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
-  .animate-float { animation: float 6s ease-in-out infinite; }
+  .link-fx:hover { background-size: 100% 1px; }
 
   /* Pulse dot */
   @keyframes pulseDot {
     0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(0.85); }
+    50% { opacity: 0.45; transform: scale(0.85); }
   }
-  .animate-pulse-dot { animation: pulseDot 1.6s ease-in-out infinite; }
+  .pulse-dot { animation: pulseDot 1.6s ease-in-out infinite; }
+
+  /* Infinite slide text (off-canvas menu) */
+  @keyframes slideInf {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .infinite-slide { animation: slideInf 18s linear infinite; }
+
+  @media (pointer: fine) {
+    .cursor-none-all, .cursor-none-all * { cursor: none !important; }
+  }
 }
