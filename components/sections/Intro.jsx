@@ -107,9 +107,9 @@ export default function Intro({ onEnter }) {
           <span className="w-1.5 h-1.5 rounded-full bg-lime pulse-dot" />
           On the record
         </span>
-        <span className="hidden md:inline font-display italic text-base normal-case tracking-normal text-white/80">
-          Aarav Sharma &mdash; Journalist
-        </span>
+        {/* <span className="hidden md:inline font-display italic text-base normal-case tracking-normal text-white/80">
+          Sabaysachi Sharma &mdash; Journalist
+        </span> */}
         <span className="tabular-nums shrink-0">{time || '--:--'} IST</span>
       </motion.div>
 
@@ -157,9 +157,9 @@ export default function Intro({ onEnter }) {
         className="px-5 md:px-10 py-5 md:py-8 border-t border-white/15 flex items-center justify-center md:justify-between gap-4"
       >
         <div className="hidden md:flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-white/50">
-          <span>Tap anywhere</span><span className="text-lime">/</span><span>or press the button</span>
+          <span>Tap on Communication</span>
         </div>
-        <MagneticBtn
+        {/* <MagneticBtn
           onClick={onEnter} data-cursor="cta" data-cursor-label="Enter"
           className="group inline-flex items-center gap-3 bg-lime text-ink pl-5 md:pl-7 pr-1.5 py-1.5 rounded-full text-xs md:text-sm font-mono uppercase tracking-[0.2em] hover:bg-white transition-colors"
         >
@@ -167,7 +167,7 @@ export default function Intro({ onEnter }) {
           <span className="w-10 h-10 md:w-12 md:h-12 grid place-items-center rounded-full bg-ink text-lime group-hover:rotate-45 transition-transform">
             <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
           </span>
-        </MagneticBtn>
+        </MagneticBtn> */}
         <div className="hidden md:block font-mono text-[10px] uppercase tracking-[0.3em] text-white/50">Scroll inside</div>
       </motion.div>
     </motion.div>

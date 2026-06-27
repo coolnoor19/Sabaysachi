@@ -33,7 +33,7 @@ export default function Header() {
         <div className="max-w-[1400px] mx-auto px-5 md:px-10 flex items-center justify-between gap-4">
           <a href="#top" data-cursor="link" className="flex items-center gap-2 font-display text-lg md:text-xl tracking-tight">
             <span className="w-2 h-2 rounded-full bg-lime pulse-dot" />
-            <span className="italic">aarav</span><span className="font-bold">.</span>
+            <span className="italic">Sabaysachi</span><span className="font-bold">.</span>
           </a>
 
           <ul className="hidden lg:flex items-center gap-7">
@@ -54,7 +54,7 @@ export default function Header() {
             </a>
             <a href="#contact" data-cursor="link"
               className="group inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] border border-lime text-lime px-4 py-2 rounded-full hover:bg-lime hover:text-ink transition-colors">
-              Contact <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:rotate-45" />
+              Communicate <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:rotate-45" />
             </a>
           </div>
 

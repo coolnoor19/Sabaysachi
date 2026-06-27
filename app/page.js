@@ -46,9 +46,9 @@ function App() {
       <Hero />
       <Marquee />
       <About />
-      <Articles />
+      {/* <Articles /> */}
       <Awards />
-      <PullQuote />
+      {/* <PullQuote /> */}
       <Press />
       <Contact />
       <Footer />

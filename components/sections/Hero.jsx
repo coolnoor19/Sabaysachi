@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { ChevronDown, MapPin } from 'lucide-react';
 import { PROFILE } from '@/lib/data';
 
-const BEATS = ['Investigative', 'Politics', 'Sports', 'Culture & Arts'];
+const BEATS = ['Film Maker ', 'Script Writer', 'Content Strategy', 'Campaign Strategy'];
 
 export default function Hero() {
   const { scrollY } = useScroll();
@@ -21,7 +21,7 @@ export default function Hero() {
     <section id="top" className="relative pt-28 sm:pt-32 md:pt-36 pb-16 md:pb-24 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-5 md:px-10">
         {/* Top meta strip */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8 }}
           className="flex items-center justify-between gap-2 text-[10px] sm:text-xs font-mono uppercase tracking-[0.15em] sm:tracking-[0.25em] text-white/55 border-y border-white/10 py-3 mb-12 md:mb-20"
         >
@@ -30,23 +30,23 @@ export default function Hero() {
             <span className="hidden sm:inline">Vol. XI / Edition 2025</span>
             <span className="sm:hidden">Vol. XI</span>
           </span>
-          <span className="hidden md:inline">Independent Journalism</span>
+          <span className="hidden md:inline">Communication Consultant</span>
           <span className="flex items-center gap-1.5 shrink-0">
             <MapPin className="w-3 h-3" />
             <span>{PROFILE.city}</span>
           </span>
-        </motion.div>
+        </motion.div> */}
 
         {/* Page title (centered, Davies-style) */}
         <motion.div style={{ y: yText, opacity }} className="text-center">
-          <motion.p
+          {/* <motion.p
             initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7 }}
             className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-lime mb-6 inline-flex items-center gap-3"
           >
             <span className="w-8 h-px bg-lime" />
             The Portfolio
             <span className="w-8 h-px bg-lime" />
-          </motion.p>
+          </motion.p> */}
 
           <motion.h1
             initial={{ opacity: 0, scale: 1.05 }} animate={{ opacity: 1, scale: 1 }}
@@ -70,7 +70,7 @@ export default function Hero() {
           >
             <a href="#top" className="link-fx hover:text-white">Home</a>
             <span className="text-lime">/</span>
-            <span className="text-white">Journalist</span>
+            <span className="text-white">Communication Consultant</span>
             <span className="text-lime">/</span>
             <span className="relative inline-block min-w-[8rem] text-left sm:text-center">
               <motion.span key={b} initial={{ y: 14, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.4 }} className="inline-block text-lime">
@@ -79,16 +79,7 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5, duration: 0.9 }}
-            style={{ opacity }}
-            className="mt-14 md:mt-20 flex flex-col items-center gap-2 text-[10px] font-mono uppercase tracking-[0.3em] text-white/50"
-          >
-            Scroll to explore
-            <motion.span animate={{ y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 1.6 }}>
-              <ChevronDown className="w-4 h-4" />
-            </motion.span>
-          </motion.div>
+         
         </motion.div>
       </div>
     </section>

@@ -10,10 +10,10 @@ export default function Footer() {
         <div className="grid grid-cols-12 gap-8 md:gap-10">
           <FadeUp className="col-span-12 md:col-span-5">
             <p className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-white/55 mb-5">
-              <span className="w-1.5 h-1.5 bg-lime rounded-full" /> Working globally
+              <span className="w-1.5 h-1.5 bg-lime rounded-full" /> sabayasachi.work
             </p>
             <p className="font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] tracking-[-0.02em] text-balance">
-              Available for <span className="text-lime italic font-light">commissions</span>, speaking, &amp; long-form collaborations.
+              I moonlight across multiple projects—mostly to feed my ego  <span className="text-lime italic font-light">moonlight</span> 
             </p>
             <a href={`mailto:${PROFILE.email}`}
               className="mt-6 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] link-fx hover:text-lime">
@@ -48,11 +48,11 @@ export default function Footer() {
           </FadeUp>
         </div>
 
-        <div className="mt-14 md:mt-20">
-          <h2 className="font-display italic font-light text-[clamp(3.5rem,15vw,14rem)] leading-[0.85] tracking-[-0.03em] text-white/[0.07] select-none break-all">
+        {/* <div className="mt-14 md:mt-20">
+          <h2 className="font-display italic font-light text-[clamp(3.5rem,15vw,12rem)] leading-[0.85] tracking-[-0.03em] text-white/[0.07] select-none break-all">
             {PROFILE.name.toLowerCase().replace(' ', '.')}
           </h2>
-        </div>
+        </div> */}
 
         <div className="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-white/45">
           <p>© {new Date().getFullYear()} — All bylines reserved.</p>

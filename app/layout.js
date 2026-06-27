@@ -6,7 +6,7 @@ const sans = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swap
 const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono', display: 'swap' });
 
 export const metadata = {
-  title: 'Aarav Sharma — Journalist & Storyteller',
+  title: 'Sabaysachi Sharma — Journalist & Storyteller',
   description: 'Award-winning journalist covering investigative, politics, sports and culture.',
 };
 
