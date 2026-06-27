@@ -19,8 +19,8 @@ export default function VideoSection() {
             </p>
 
             <h2 className="font-display font-medium text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-[-0.025em]">
-              Watch the{' '}
-              <span className="text-lime italic font-light">conversation.</span>
+              Craft, Strategy {' '}
+              <span className="text-lime italic font-light">& Chaos.</span>
             </h2>
           </FadeUp>
 
@@ -28,7 +28,7 @@ export default function VideoSection() {
             delay={0.1}
             className="max-w-sm text-white/65 text-sm md:text-base"
           >
-            <p>A tribute to Silver City Kataka.</p>
+            <p>Skills That Pay the Bills</p>
           </FadeUp>
         </div>
 
@@ -64,9 +64,9 @@ export default function VideoSection() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
-                <h3 className="font-display italic text-white text-xl sm:text-2xl md:text-4xl">
+                {/* <h3 className="font-display italic text-white text-xl sm:text-2xl md:text-4xl">
                   A long-form chat on craft & communication.
-                </h3>
+                </h3> */}
 
                 <p className="hidden sm:flex items-center gap-3 mt-3 font-mono uppercase tracking-[0.25em] text-[11px] text-white/70">
                   <Volume2 className="w-4 h-4" />

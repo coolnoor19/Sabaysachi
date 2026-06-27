@@ -118,7 +118,7 @@ export default function Intro({ onEnter }) {
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6, duration: 0.6 }}
         className="absolute top-[68px] sm:top-20 right-5 md:right-10 z-10 font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-white/60 hover:text-lime transition-colors flex items-center gap-1.5"
       >
-        Skip intro <ArrowUpRight className="w-3 h-3" />
+        {/* Skip intro <ArrowUpRight className="w-3 h-3" /> */}
       </motion.button>
 
       {/* Center stage */}

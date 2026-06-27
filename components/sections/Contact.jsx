@@ -34,12 +34,12 @@ export default function Contact() {
     <section id="contact" className="py-20 md:py-32 border-t border-white/10">
       <div className="max-w-[1400px] mx-auto px-5 md:px-10 grid grid-cols-12 gap-8 md:gap-12">
         <FadeUp className="col-span-12 md:col-span-5">
-          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lime mb-3">06 / Contact</p>
+          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lime mb-3"> Contact</p>
           <h2 className="font-display font-medium text-4xl sm:text-5xl md:text-6xl leading-[1] tracking-[-0.025em] text-balance">
-            Have a tip? <span className="text-lime italic font-light">A story</span> to commission?
+            Let’s<span className="text-lime italic font-light">Communicate.</span>
           </h2>
           <p className="mt-5 md:mt-6 text-white/65 text-sm md:text-base max-w-md">
-            For tips, please use Signal or ProtonMail for sensitive material. For commissions and speaking, the form is fastest.
+            Forget Hire Me—that’s too vanilla. Let’s collaborate. You’ve got work that needs doing, I’ve got bills that need paying. Let’s tolerate each other professionally, deliver something brilliant and if the vibes are good—we’ll keep the party going.
           </p>
           <ul className="mt-8 md:mt-10 space-y-2 font-mono text-xs md:text-sm">
             {SOCIALS.map((s) => (
@@ -57,8 +57,8 @@ export default function Contact() {
         <FadeUp delay={0.1} className="col-span-12 md:col-span-7 md:pl-6">
           <form onSubmit={submit} className="space-y-7">
             {[
-              { k: 'name', label: 'Your name', placeholder: 'Jane Doe', type: 'text' },
-              { k: 'email', label: 'Email', placeholder: 'jane@newsroom.com', type: 'email' },
+              { k: 'name', label: 'Your name', placeholder: 'Full Name', type: 'text' },
+              { k: 'email', label: 'Email', placeholder: 'Enter your email', type: 'email' },
             ].map((f) => (
               <div key={f.k} className="border-b border-white/20 focus-within:border-lime transition-colors pb-2">
                 <label className="block font-mono text-[10px] uppercase tracking-[0.3em] text-white/55 mb-1">{f.label}</label>

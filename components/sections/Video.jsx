@@ -18,7 +18,7 @@ export default function Video() {
               In Conversation
             </p>
             <h2 className="font-display font-medium text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-[-0.025em] text-balance">
-              Watch the <span className="text-lime italic font-light">conversation</span>.
+              Celebrating the soul of the <span className="text-lime italic font-light">Millennium City</span>.
             </h2>
           </FadeUp>
           <FadeUp delay={0.1} className="max-w-sm text-white/65 text-sm md:text-base">
@@ -76,9 +76,9 @@ export default function Video() {
             {/* Bottom info */}
             <div className="absolute bottom-3 left-3 right-3 md:bottom-6 md:left-6 md:right-6 flex items-end justify-between gap-4 text-white">
               <div className="min-w-0">
-                <p className="font-display italic text-lg sm:text-2xl md:text-3xl leading-tight text-balance">
+                {/* <p className="font-display italic text-lg sm:text-2xl md:text-3xl leading-tight text-balance">
                   A long-form chat on craft &amp; communication.
-                </p>
+                </p> */}
                 <p className="hidden sm:flex mt-2 items-center gap-3 font-mono text-[10px] md:text-xs uppercase tracking-[0.25em] text-white/60">
                   <Volume2 className="w-3.5 h-3.5" />
                   Watch with sound &middot; opens in new tab

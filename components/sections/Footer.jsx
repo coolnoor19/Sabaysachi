@@ -12,8 +12,8 @@ export default function Footer() {
             <p className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-white/55 mb-5">
               <span className="w-1.5 h-1.5 bg-lime rounded-full" /> sabayasachi.work
             </p>
-            <p className="font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] tracking-[-0.02em] text-balance">
-              I <span className="text-lime italic font-light">moonlight</span>  across multiple projects—mostly to feed my ego  
+            <p className="font-display text-3xl sm:text-4xl md:text-xl leading-[1.05] tracking-[-0.02em] text-balance">
+               Outside my 11-to-7 grind (which pays the bills but rarely thrills), I moonlight across multiple projects—<span className="text-lime italic font-light">mostly to feed my ego</span> and occasionally to impress people at parties. From cultural campaigns to content clinics, I dabble, direct and sometimes dominate. Call it passion, call it side hustle, call it a coping mechanism—I call it fun. 
             </p>
             <a href={`mailto:${PROFILE.email}`}
               className="mt-6 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] link-fx hover:text-lime">
@@ -55,8 +55,8 @@ export default function Footer() {
         </div> */}
 
         <div className="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-white/45">
-          <p>© {new Date().getFullYear()} — All bylines reserved.</p>
-          <p>Made with restraint &amp; <span className="text-lime">ink</span>.</p>
+          <p>© {new Date().getFullYear()}</p>
+          <p>Developed By <span className="text-lime">Noor</span>.</p>
           <a href="#top" className="group inline-flex items-center gap-2 hover:text-lime transition-colors">
             Back to top
             <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
