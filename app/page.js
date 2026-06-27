@@ -15,6 +15,7 @@ import Press from '@/components/sections/Press';
 import Contact from '@/components/sections/Contact';
 import Footer from '@/components/sections/Footer';
 import NewAbout from '@/components/sections/NewAbout';
+import Video from '@/components/sections/Video';
 
 function App() {
   const [entered, setEntered] = useState(true);
@@ -47,6 +48,7 @@ function App() {
       <Hero />
       <Marquee />
       <About />
+      <Video />
       <NewAbout/>
       {/* <Articles /> */}
       <Awards />
