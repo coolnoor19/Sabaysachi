@@ -11,7 +11,7 @@ export default function Awards() {
           <FadeUp className="col-span-12 md:col-span-5">
             <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lime mb-3">03 / Work Experience</p>
             <h2 className="font-display font-medium text-4xl sm:text-5xl md:text-5xl leading-[1.02] tracking-[-0.025em]">
-               <span className="text-lime italic font-light">Major Projects </span>
+              Major <span className="text-lime italic font-light">Projects </span>
             </h2>
           </FadeUp>
           <FadeUp delay={0.1} className="col-span-12 md:col-span-7 md:pl-10 text-white/65 text-sm md:text-base md:flex md:items-end">

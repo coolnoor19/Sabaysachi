@@ -7,8 +7,8 @@ const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono', displ
 const display = Courier_Prime({ subsets: ['latin'],weight: '400', variable: '--font-courier', display: 'swap' });
 
 export const metadata = {
-  title: 'Sabaysachi — Communication Consultant',
-  description: 'Award-winning journalist covering investigative, politics, sports and culture.',
+  title: 'Sabyasachi — Communication Consultant',
+  description: 'Sabyasachi is an Indian documentary film maker, content strategist, , copywriter, and social media consultant',
 };
 
 export default function RootLayout({ children }) {
