@@ -8,7 +8,7 @@ const display = Courier_Prime({ subsets: ['latin'],weight: '400', variable: '--f
 
 export const metadata = {
   title: 'Sabyasachi — Communication Consultant',
-  description: 'Sabyasachi is an Indian documentary film maker, content strategist, , copywriter, and social media consultant',
+  description: 'Sabyasachi Kundu is a Communication Consultant, Documentary Film Maker, Content Strategist, Copywriter and Social Media Consultant.',
 };
 
 export default function RootLayout({ children }) {
