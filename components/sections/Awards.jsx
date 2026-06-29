@@ -15,7 +15,7 @@ export default function Awards() {
             </h2>
           </FadeUp>
           <FadeUp delay={0.1} className="col-span-12 md:col-span-7 md:pl-10 text-white/65 text-sm md:text-base md:flex md:items-end">
-            <p>Attempt made by me to make by CV cool </p>
+            <p>Attempts made by me to make my CV cool </p>
           </FadeUp>
         </div>
 
